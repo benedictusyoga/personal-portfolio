@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+
+}
+
+.navbar-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    position: fixed;
+    top: 3rem;
+    margin-right: 15vw;
+    margin-left: 15vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    background-color: var(--primary-color);
+    width: 70vw;
+    border-radius: 10rem;
+}
+
+.navbar-anchors {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+}
+
+.navbar-anchors li {
+    padding-left: 2em;
+}
