@@ -21,8 +21,8 @@
     justify-content: space-between;
     align-items: center;
 
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 3em;
+    padding-right: 3em;
 
     background-color: var(--primary-color);
     width: 70vw;
@@ -33,8 +33,109 @@
     display: flex;
     list-style: none;
     flex-direction: row;
+
 }
 
 .navbar-anchors li {
     padding-left: 2em;
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-brand img {
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.navbar-brand img:hover {
+    transform: translateY(-20%);
+}
+
+/* Wrapper for the download button and dropdown */
+/* Wrapper for the download button and dropdown */
+.download-btn-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Download button styling */
+.download-btn {
+    display: flex;
+    align-items: center;
+    /* Center the content vertically */
+    gap: 8px;
+    /* Space between icon and text */
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+    /* For text positioning */
+}
+
+/* Icon styling */
+.download-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Text styling */
+.download-text {
+    opacity: 1;
+    /* Always visible when hovered */
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 5px;
+}
+
+/* Hover effects for button */
+.download-btn-wrapper:hover .download-btn {
+    background-color: var(--hover-color);
+    /* Slightly change the button color */
+    transform: scale(1.05);
+    /* Add a subtle scaling effect */
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 5px);
+    /* Slightly below the button */
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 0;
+    display: none;
+    /* Hidden initially */
+    flex-direction: column;
+    width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Show dropdown on hover */
+.download-btn-wrapper:hover .dropdown-menu {
+    display: flex;
+}
+
+/* Dropdown menu link styling */
+.dropdown-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
 }

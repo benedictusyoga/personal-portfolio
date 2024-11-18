@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NavBar.css";
 import logo from "../assets/logo.svg";
+import { MdDownload } from "react-icons/md";
 
 const NavBar = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+
   return (
     <div className="navbar-wrapper">
       <nav className="navbar">
@@ -13,16 +19,16 @@ const NavBar = () => {
         </div>
         <ul className="navbar-anchors">
           <li>
-            <a href="#home">Home</a>
+            <a href="#home">HOME</a>
           </li>
           <li>
-            <a href="#about">About</a>
+            <a href="#about">ABOUT</a>
           </li>
           <li>
-            <a href="#projects">Projects</a>
+            <a href="#projects">PROJECT</a>
           </li>
           <li>
-            <a href="#connect">Connect</a>
+            <a href="#connect">CONNECT</a>
           </li>
         </ul>
       </nav>
