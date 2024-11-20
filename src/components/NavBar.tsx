@@ -26,7 +26,7 @@ const NavBar = () => {
               <MdDownload size={28} />
             </button>
             <span className={`btn-text ${showDropdown ? "visible" : ""}`}>
-              Download CV
+              DOWNLOAD CV
             </span>
             {showDropdown && (
               <ul className="dropdown-menu">
