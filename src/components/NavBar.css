@@ -54,88 +54,74 @@
     transform: translateY(-20%);
 }
 
-/* Wrapper for the download button and dropdown */
-/* Wrapper for the download button and dropdown */
-.download-btn-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-/* Download button styling */
 .download-btn {
+    position: relative;
     display: flex;
     align-items: center;
-    /* Center the content vertically */
-    gap: 8px;
-    /* Space between icon and text */
+    justify-content: center;
+
+}
+
+.download-icon-btn {
+    padding: 0.3rem 1rem;
+    display: flex;
+    align-items: center;
     border: none;
     background-color: var(--secondary-color);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    white-space: nowrap;
+    font-size: 1rem;
+    color: #ffff;
     position: relative;
-    /* For text positioning */
 }
 
-/* Icon styling */
-.download-icon {
-    display: inline-block;
-    vertical-align: middle;
+.download-icon-btn svg {
+    transition: transform 0.5s ease;
 }
 
-/* Text styling */
-.download-text {
-    opacity: 1;
-    /* Always visible when hovered */
-    transition: opacity 0.3s ease;
-    overflow: hidden;
+.btn-text {
+    font-family: 'Montserrat', sans-serif;
+
+    opacity: 0;
+    visibility: hidden;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
     white-space: nowrap;
-    margin-left: 5px;
 }
 
-/* Hover effects for button */
-.download-btn-wrapper:hover .download-btn {
-    background-color: var(--hover-color);
-    /* Slightly change the button color */
-    transform: scale(1.05);
-    /* Add a subtle scaling effect */
+.download-btn:hover .btn-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
 }
 
-/* Dropdown menu styling */
+.download-btn:hover .download-icon-btn svg {
+    transform: translateY(10%);
+}
+
 .dropdown-menu {
     position: absolute;
-    top: calc(100% + 5px);
-    /* Slightly below the button */
+    top: 100%;
     left: 0;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px 0;
-    display: none;
-    /* Hidden initially */
-    flex-direction: column;
-    width: 150px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+
+    width: 120%;
+    background-color: var(--secondary-color);
+    border-radius: 0.5rem;
+
+    padding: 1rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    z-index: 10;
+    min-width: 10rem;
 }
 
-/* Show dropdown on hover */
-.download-btn-wrapper:hover .dropdown-menu {
-    display: flex;
+.dropdown-menu li a {
+    color: var(--tertiary-color);
 }
 
-/* Dropdown menu link styling */
-.dropdown-menu a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease;
-}
-
-.dropdown-menu a:hover {
-    background-color: #f0f0f0;
+.dropdown-menu li a:hover {
+    color: var(--accent-color);
 }
