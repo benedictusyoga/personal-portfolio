@@ -6,8 +6,32 @@ import { FaFileArrowDown } from "react-icons/fa6";
 
 const NavBar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Toggle dropdown visibility on hover
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const [tooltip, setTooltip] = useState({
+    visible: false,
+    x: 0,
+    y: 0,
+    text: "",
+  });
+  const handleMouseEnterTT = (e: React.MouseEvent, text: string) => {
+    const { clientX, clientY } = e;
+    setTooltip({ visible: true, x: clientX, y: clientY, text });
+  };
+
+  const handleMouseMoveTT = (e: React.MouseEvent) => {
+    const { clientX, clientY } = e;
+    setTooltip((prev) => ({ ...prev, x: clientX, y: clientY }));
+  };
+
+  const handleMouseLeaveTT = () => {
+    setTooltip({ visible: false, x: 0, y: 0, text: "" });
+  };
+
   const handleMouseEnter = () => setShowDropdown(true);
   const handleMouseLeave = () => setShowDropdown(false);
 
@@ -60,19 +84,30 @@ const NavBar = () => {
           </div>
         </div>
         <ul className="navbar-anchors">
-          <li>
-            <a href="#home">HOME</a>
-          </li>
-          <li>
-            <a href="#about">ABOUT</a>
-          </li>
-          <li>
-            <a href="#projects">PROJECTS</a>
-          </li>
-          <li>
-            <a href="#connect">CONNECT</a>
-          </li>
+          {[
+            { id: "home", text: "Go to the homepage" },
+            { id: "about", text: "Learn about me" },
+            { id: "projects", text: "See my projects" },
+            { id: "connect", text: "Connect with me" },
+          ].map((item) => (
+            <li
+              key={item.id}
+              onMouseEnter={(e) => handleMouseEnterTT(e, item.text)}
+              onMouseMove={handleMouseMoveTT}
+              onMouseLeave={handleMouseLeaveTT}
+            >
+              <a href={`#${item.id}`}>{item.id.toUpperCase()}</a>
+            </li>
+          ))}
         </ul>
+        {tooltip.visible && (
+          <div
+            className="tooltip"
+            style={{ left: tooltip.x + 80, top: tooltip.y + 50 }}
+          >
+            {tooltip.text}
+          </div>
+        )}
       </nav>
     </div>
   );
