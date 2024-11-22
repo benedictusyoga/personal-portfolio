@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./NavBar.css";
 import logo from "../assets/logo.svg";
 import { MdDownload } from "react-icons/md";
