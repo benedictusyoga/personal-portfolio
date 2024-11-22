@@ -38,9 +38,10 @@ const NavBar = () => {
                     rel="noopener noreferrer"
                     download="Professional_CV.pdf"
                   >
-                    Professional CV
+                    <div className="cv-text">
+                      Professional CV <FaFileArrowDown size={20} />
+                    </div>
                   </a>
-                  <FaFileArrowDown size={22} />
                 </li>
                 <li>
                   <a
@@ -49,9 +50,10 @@ const NavBar = () => {
                     rel="noopener noreferrer"
                     download="Creative_CV.pdf"
                   >
-                    Creative CV
+                    <div className="cv-text">
+                      Creative CV <FaFileArrowDown size={20} />
+                    </div>
                   </a>
-                  <FaFileArrowDown size={22} />
                 </li>
               </ul>
             )}
