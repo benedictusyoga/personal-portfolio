@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./NavBar.css";
 import logo from "../assets/logo.svg";
 import { MdDownload } from "react-icons/md";
+import { FaFileArrowDown } from "react-icons/fa6";
 
 const NavBar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -31,14 +32,26 @@ const NavBar = () => {
             {showDropdown && (
               <ul className="dropdown-menu">
                 <li>
-                  <a href="" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="ProfessionalCV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download="Professional_CV.pdf"
+                  >
                     Professional CV
                   </a>
+                  <FaFileArrowDown size={22} />
                 </li>
                 <li>
-                  <a href="" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="CreativeCV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download="Creative_CV.pdf"
+                  >
                     Creative CV
                   </a>
+                  <FaFileArrowDown size={22} />
                 </li>
               </ul>
             )}
@@ -52,7 +65,7 @@ const NavBar = () => {
             <a href="#about">ABOUT</a>
           </li>
           <li>
-            <a href="#projects">PROJECT</a>
+            <a href="#projects">PROJECTS</a>
           </li>
           <li>
             <a href="#connect">CONNECT</a>

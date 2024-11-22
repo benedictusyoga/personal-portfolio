@@ -108,7 +108,7 @@
 
 .dropdown-menu {
     position: absolute;
-    top: 105%;
+    top: 100%;
     left: 0;
 
     width: 120%;
@@ -122,10 +122,25 @@
     min-width: 10rem;
 }
 
+.dropdown-menu li {
+    display: flex;
+    justify-content: space-between;
+}
+
 .dropdown-menu li a {
     color: var(--tertiary-color);
 }
 
 .dropdown-menu li a:hover {
     color: var(--accent-color);
+}
+
+.dropdown-menu svg {
+    margin-right: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.dropdown-menu li:hover svg {
+    opacity: 1;
 }
