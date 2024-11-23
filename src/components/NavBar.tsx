@@ -3,6 +3,8 @@ import "./NavBar.css";
 import logo from "../assets/logo.svg";
 import { MdDownload } from "react-icons/md";
 import { FaFileArrowDown } from "react-icons/fa6";
+import { FaBars } from "react-icons/fa6";
+import { FaTimes } from "react-icons/fa";
 
 const NavBar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -83,7 +85,7 @@ const NavBar = () => {
             )}
           </div>
         </div>
-        <ul className="navbar-anchors">
+        <ul className={`navbar-anchors ${isMenuOpen ? "open" : ""}`}>
           {[
             { id: "home", text: "Go to the homepage" },
             { id: "about", text: "Learn about me" },
@@ -108,6 +110,13 @@ const NavBar = () => {
             {tooltip.text}
           </div>
         )}
+        <button
+          className="hamburger-menu"
+          onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
+        >
+          {isMenuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
+        </button>
       </nav>
     </div>
   );

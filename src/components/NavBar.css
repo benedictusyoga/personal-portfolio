@@ -30,6 +30,9 @@
 }
 
 .navbar-anchors {
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+
     display: flex;
     list-style: none;
     flex-direction: row;
@@ -157,8 +160,53 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     white-space: nowrap;
     pointer-events: none;
-    /* Ensure the tooltip doesn't interfere with mouse events */
     z-index: 1000;
     transform: translate(-50%, -50%);
     transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.navbar-anchors.open {
+
+    text-align: right;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 120%;
+    /* Adjust based on your navbar height */
+
+    right: 5em;
+    background: var(--primary-color);
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px) {
+    .btn-text {
+        display: none;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        left: -5em;
+    }
+
+    .navbar-anchors {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
 }
