@@ -50,12 +50,12 @@ const Home = () => {
     hidden: {
       y: isSmallScreen ? 50 : 50,
       opacity: 0,
-      scale: isSmallScreen ? 1.3 : 1,
+      scale: isSmallScreen ? 1.6 : 1,
     },
     visible: {
       y: 0,
       opacity: 1,
-      scale: isSmallScreen ? 1.3 : 1,
+      scale: isSmallScreen ? 1.6 : 1,
       transition: { duration: 0.8, ease: "easeOut" },
     },
   };
@@ -64,12 +64,12 @@ const Home = () => {
     hidden: {
       y: isSmallScreen ? 50 : 50,
       opacity: 0,
-      scale: isSmallScreen ? 1.3 : 1,
+      scale: isSmallScreen ? 1.6 : 1,
     },
     visible: {
       y: 0,
       opacity: 1,
-      scale: isSmallScreen ? 1.3 : 1,
+      scale: isSmallScreen ? 1.6 : 1,
       transition: { duration: 0.8, ease: "easeOut", delay: 1 },
     },
   };
