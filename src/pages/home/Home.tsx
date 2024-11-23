@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Home.css";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const words = [
