@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Home.css";
 import { motion } from "framer-motion";
+import HoverText from "../../components/HoverText";
 
 const Home = () => {
   const words = [
@@ -82,7 +83,9 @@ const Home = () => {
         animate="visible"
         variants={leftTextVariants}
       >
-        <h1>Hello There! I'm</h1>
+        <h1>
+          <HoverText text="Hello There! I'm" />
+        </h1>
         <span>Yoga</span>
       </motion.div>
       <motion.div

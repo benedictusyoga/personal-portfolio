@@ -25,12 +25,15 @@ html {
 }
 
 .left-text h1 {
+    justify-content: right;
+    z-index: 999;
     position: relative;
-    top: 2.2em;
+    top: 0.6em;
     font-size: 3.5vw;
 }
 
 .left-text span {
+    z-index: -1;
     position: relative;
     top: -0.1em;
     font-size: 18vw;
