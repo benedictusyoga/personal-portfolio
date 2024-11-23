@@ -2,8 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
-
 .home-container {
+
+    cursor: default;
+
     display: flex;
     flex-direction: row;
     gap: 1em;
@@ -13,11 +15,12 @@ html {
 
     justify-content: center;
     align-items: center;
+
 }
 
 .left-text {
     flex: 1;
-
+    z-index: 0;
     text-align: right;
 }
 
@@ -73,6 +76,7 @@ html {
     }
 
     .left-text {
+        z-index: -1;
         justify-content: flex-end;
         align-items: end;
         flex: 0;
