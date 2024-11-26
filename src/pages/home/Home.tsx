@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import "./Home.css";
 import { motion } from "framer-motion";
 import HoverText from "../../components/HoverText";
+import About from "../about/About";
+import Projects from "../projects/Projects";
+import Connect from "../connect/Connect";
 
 const Home = () => {
   const words = [
@@ -76,29 +79,40 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container" id="home">
-      <motion.div
-        className="left-text"
-        initial="hidden"
-        animate="visible"
-        variants={leftTextVariants}
-      >
-        <h1>
-          <HoverText text="Hello There! I'm" />
-        </h1>
-        <span>Yoga</span>
-      </motion.div>
-      <motion.div
-        className="right-text"
-        initial="hidden"
-        animate="visible"
-        variants={rightTextVariants}
-      >
-        <p>
-          I am a programmer with a specialization in <br />
-          <span className="typewriter">{text}</span>.
-        </p>
-      </motion.div>
+    <div>
+      <section className="home-container" id="home">
+        <motion.div
+          className="left-text"
+          initial="hidden"
+          animate="visible"
+          variants={leftTextVariants}
+        >
+          <h1>
+            <HoverText text="Hello There! I'm" />
+          </h1>
+          <span>Yoga</span>
+        </motion.div>
+        <motion.div
+          className="right-text"
+          initial="hidden"
+          animate="visible"
+          variants={rightTextVariants}
+        >
+          <p>
+            I am a programmer with a specialization in <br />
+            <span className="typewriter">{text}</span>.
+          </p>
+        </motion.div>
+      </section>
+      <section id="about">
+        <About />
+      </section>
+      <section id="projects">
+        <Projects />
+      </section>
+      <section id="connect">
+        <Connect />
+      </section>
     </div>
   );
 };

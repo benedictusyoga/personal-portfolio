@@ -180,7 +180,8 @@
 
     .dropdown-menu {
         position: absolute;
-        left: -8vw;
+        border-radius: 0 0em 1em 1em;
+        left: -6em;
         font-size: 1.4vh;
     }
 
